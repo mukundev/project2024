@@ -1,0 +1,18 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - VAR_NAME=react-app
+
+    networks:
+      - react-network
+
+networks:
+  react-network:
+    driver: bridge
+
